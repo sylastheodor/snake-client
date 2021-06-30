@@ -15,6 +15,10 @@ const connect = function () {
 
   conn.on('data', (message) => {
     console.log(`server sent ${message}`)
+  });
+
+  conn.on('connect', () => {
+    conn.write('Name: SSS')
   })
 
   return conn;
