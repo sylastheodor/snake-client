@@ -7,7 +7,6 @@ const setupInput = function (connection) {
   stdin.setEncoding("utf8");
   stdin.resume();
   const handleUserInput = (key) => {
-    console.log(key)
     if (key === '\u0003') {
       process.exit();
     }
@@ -22,6 +21,15 @@ const setupInput = function (connection) {
     }
     if (key === 'd') {
       conn.write('Move: right')
+    }
+    if (key === 'j') {
+      conn.write('Say: I love Kate Bush.')
+    }
+    if (key === 'k') {
+      conn.write('Say: A deal with god is a')
+    }
+    if (key === 'l') {
+      conn.write('Say: perfect song')
     }
   }
   stdin.on("data", handleUserInput);
